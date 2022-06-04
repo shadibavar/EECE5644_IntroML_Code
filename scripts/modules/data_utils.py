@@ -13,10 +13,10 @@ def data_augmentation(X, n):
 
 
 # Generating synthetic data
-def synthetic_data(theta, b, N):
+def synthetic_data(theta, b, N, noise=0.01):
     # Generate y = Xw + b + noise
     X = np.random.normal(0, 1, (N, len(theta)))
-    y = X.dot(theta) + b + np.random.normal(0, 0.01, N)
+    y = X.dot(theta) + b + np.random.normal(0, noise, N)
     return X, y
 
 
